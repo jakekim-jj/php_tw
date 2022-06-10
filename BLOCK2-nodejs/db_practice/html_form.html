@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://localhost:8080/insert" method="POST">
+        <h2>This is Insert Form</h2>
+        <input type="text" name="composer" placeholder="Write name of composer" />
+        <input type="text" name="genre" placeholder="Genre"/>
+        <input type="age" name="age" placeholder="write Age"/>
+        <input type="submit"/>
+    </form>
+
+    <form action="http://localhost:8080/update" method="POST">
+        <h2>This is Update Form</h2>
+        <input type="text" name="update" placeholder="Do you want update??" />
+        <input type="text" name="genre" placeholder="Genre"/>
+        <input type="age" name="age" placeholder="write Age"/>
+        <input type="submit"/>
+    </form>
+
+    <form action="http://localhost:8080/delete" method="POST">
+        <h2>This is Update Form</h2>
+        <input type="text" name="delete" placeholder="Do you want delete??" />
+        <input type="submit"/>
+    </form>
+</body>
+</html>

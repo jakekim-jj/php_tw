@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie</title>
+</head>
+<body>
+    <form action="">
+        <select id="movies" onchange="showMovies(this.value);">
+
+        </select>
+    </form>
+    <div id="output"></div>
+</body>
+<script>
+    const loadMovie = () =>{
+        const XMLRequest = new XMLHttpRequest();
+        XMLRequest.onload = function() {
+            document.getElementById("movies").innerHTML = this.responseText;
+        }
+        XMLRequest.open("GET", "http://192.168.64.2/ajax/loadMovie.php");
+        XMLRequest.send();
+    }
+    loadMovie();
+
+    const showMovies = (movieName) =>{
+        const XMLRequest = new XMLHttpRequest();
+        XMLRequest.onload = function(){
+            document.getElementById("output").innerHTML = this.responseText;
+        }
+        XMLRequest.open("GET", "http://192.168.64.2/ajax/getMovie.php?movien="+movieName);
+        XMLRequest.send();
+    }
+
+</script>
+</html>

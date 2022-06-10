@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Create two html form in one html file. one form selecting 
+    a data using the ID and the other form to delete a data using the ID.
+    First form action should be "read" and second form action should be "delete"-->
+    <form action="http://localhost:8080/read" method="POST" >
+        <!--link of nodejs-->
+        <input type="text" name="wantread" placeholder="do you wanna read?"/>
+        <input type="submit" />
+    </form>
+    <form action="http://localhost:8080/delete" method="POST">
+        <input type="text" name="wantdelete" placeholder="do you wanna delete??"/>
+        <input type="submit" />
+    </form>
+
+
+    <!--Creat an html form which will get the information of the customer
+    and use node.js to insert those information into the database. -->
+    <form action="http://localhost:8080/insert" method="POST">
+        <input type="text" name="Uname" placeholder="username"/>
+        <input type="text" name="Cname" placeholder="customername"/>
+        <input type="text" name="phone" placeholder="phone"/>
+        <input type="email" name="email" placeholder="email"/>
+        <input type="submit" />
+    </form>
+
+    <!--Send the information to update a record in the database using the node.js and the customerid-->
+    <form action="http://localhost:8080/update" method="POST">
+        <input type="text" name="wantupdate" placeholder="customerid"/>
+        <input type="text" name="Uname" placeholder="username"/>
+        <input type="text" name="Cname" placeholder="customername"/>
+        <input type="submit" />
+    </form>
+</body>
+</html>

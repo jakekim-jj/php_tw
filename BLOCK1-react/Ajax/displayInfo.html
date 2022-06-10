@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <select id="customers" onchange="showCustomers(this.value);">
+            <!-- <option value="JAKE">Jake</option>
+            <option value="JOSE">Jose</option>
+            <option value="ROY">Roy</option> -->
+        </select>
+    </form>
+    <div id="output"></div>
+</body>
+<script>
+    const loadCustomers = () =>{
+        const XMLRequest = new XMLHttpRequest();
+        XMLRequest.onload = function () {
+            document.getElementById("customers").innerHTML = this.responseText;
+        }
+        XMLRequest.open("GET", "http://192.168.64.3/ajax/loadCustomer.php");
+        XMLRequest.send();
+    }
+    loadCustomers();
+
+
+    const showCustomers = (username) =>{
+        const XMLRequest = new XMLHttpRequest();
+        XMLRequest.onload = function(){
+            document.getElementById("output").innerHTML = this.responseText;
+        }
+        XMLRequest.open("GET", "http://192.168.64.3/ajax/getCustomer.php?uname="+username);
+        XMLRequest.send();
+    }
+</script>
+</html>
